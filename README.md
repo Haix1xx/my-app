@@ -1,8 +1,31 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+## Follow these steps to start the development server:
 
-First, run the development server:
+### Firstly, create a `.env` file like this template:
+
+```bash
+NEXT_PUBLIC_DOMAIN=YOUR_DOMAIN
+NEXT_PUBLIC_API_DOMAIN=YOUR_API_DOMAIN
+MONGO_URI=YOUR_MONGODB_URI
+DATABASE_PASSWORD=YOUR_MONGO_PASSWORD
+NEXTAUTH_SECRET=YOUR_SECRET
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=YOUR_CLOUDINARY_NAME
+NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=YOUR_CLOUDINARY_UPLOAD_PRESET
+NEXT_PUBLIC_CLOUDINARY_SECRET=YOUR_CLOUDINARY_SECRET
+NEXT_PUBLIC_CLOUDINARY_URL=YOUR_CLOUDINARY_URL
+```
+
+### Secondly, install all required packages
+
+```bash
+npm install
+#or
+yarn install
+```
+
+### Finally, run the development server:
 
 ```bash
 npm run dev
