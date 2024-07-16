@@ -20,7 +20,9 @@ NEXT_PUBLIC_CLOUDINARY_URL=YOUR_CLOUDINARY_URL
 ### Secondly, install all required packages
 
 ```bash
-run `npm i`
+npm install
+#or
+yarn install
 ```
 
 ### Finally, run the development server:
