@@ -17,7 +17,10 @@ const Nav: FC = async () => {
           <Link href="/member">Member</Link>
           <Link href="/categories">Categories</Link>
           {session ? (
-            <Link href="/api/auth/signout?callbackUrl=/">Logout</Link>
+            <>
+              <p>{session.user._doc.username}</p>
+              <Link href="/api/auth/signout?callbackUrl=/">Logout</Link>
+            </>
           ) : (
             <>
               <Link href="/api/auth/signin">Login</Link>

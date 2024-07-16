@@ -6,7 +6,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   return (
     <div className="flex justify-center">
-      <div className="w-full max-w-3xl">
+      <div className="w-full max-w-3xl mt-5">
         <PostCard post={post} />
       </div>
     </div>
@@ -14,7 +14,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 }
 
 async function getPost(id: string) {
-  const res = await fetch("http://localhost:3000/api/categories", {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
     method: "GET",
   });
   if (!res.ok) {

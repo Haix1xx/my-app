@@ -1,7 +1,5 @@
 import CredentialsProvider from "next-auth/providers/credentials";
-import NextAuth from "next-auth/next";
 import User from "@/models/User";
-import bcrypt from "bcrypt";
 import { NextAuthOptions } from "next-auth";
 import connectDatabase from "@/config/database";
 import { verifyPassword } from "@/libs/auth";

@@ -4,12 +4,13 @@ import Image from "next/image";
 
 interface PostCardProps {
   post: Post;
+  [key: string]: any;
 }
 
-export default function PostCard({ post }: PostCardProps) {
+export default function PostCard({ post, ...props }: PostCardProps) {
   const { user, content, images } = post;
   return (
-    <div className="bg-white shadow-md rounded-md p-4 mb-4">
+    <div className="bg-white shadow-md rounded-md p-4 mb-4" {...props}>
       <div className="flex items-center mb-2">
         <div className="flex-shrink-0">
           <Image
