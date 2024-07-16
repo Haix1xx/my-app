@@ -29,21 +29,20 @@ export default function CreatePostForm() {
   const dispatch = useDispatch<AppDispatch>();
   const [createPost] = useCreatePostMutation();
   useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const res = await fetch("http://localhost:3000/api/categories");
+        if (!res.ok) {
+          throw new Error("Failed to fetch categories");
+        }
+        const data = await res.json();
+        setCategories(data.data);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
     fetchCategories();
   }, []);
-
-  const fetchCategories = async () => {
-    try {
-      const res = await fetch("http://localhost:3000/api/categories");
-      if (!res.ok) {
-        throw new Error("Failed to fetch categories");
-      }
-      const data = await res.json();
-      setCategories(data.data);
-    } catch (error) {
-      console.error("Error fetching categories:", error);
-    }
-  };
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     const imageUrls = await handleFileUpload(imageFiles);
